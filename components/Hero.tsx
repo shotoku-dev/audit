@@ -1,6 +1,6 @@
 import { Container } from "./Container";
 import { FindingCard } from "./FindingCard";
-import { SAMPLE_FINDING } from "@/lib/findings";
+import { PUBLIC_FINDINGS } from "@/lib/findings";
 import { TESTED_COUNT } from "@/lib/owasp";
 
 const FACTS = [
@@ -57,10 +57,7 @@ export function Hero() {
         </dl>
 
         <div className="mt-14">
-          <FindingCard
-            finding={SAMPLE_FINDING}
-            caption="Sample excerpt — illustrative, not a real client. Verified findings are published below."
-          />
+          <FindingCard finding={PUBLIC_FINDINGS[0]} />
         </div>
       </Container>
     </header>

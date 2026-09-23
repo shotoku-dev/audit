@@ -30,25 +30,28 @@ signed, and collects payment.
 
 ## Before this can launch
 
-Credibility on this page rests on two things: a real finding, and a real
-named person. Both have visible holes right now.
-
-- [ ] Add at least one real, reproduced, client-approved finding to
-      `PUBLIC_FINDINGS` in [`lib/findings.ts`](lib/findings.ts). While the
-      list is empty the proof section renders a loud yellow
-      "slot unfilled — do not launch" block on the live page. That's
-      deliberate: the guarantee has nothing behind it until this is filled.
-      (`SAMPLE_FINDING` is the illustrative hero excerpt and is labelled as
-      such — it is not proof and must not be relabelled as a client.)
-- [ ] Fill the operator block in
-      [`components/Operator.tsx`](components/Operator.tsx): a real photo at
-      `/public/operator.jpg`, the X/LinkedIn link, and the `[REPLACE]` bio
-      line. Write only claims you can back up if a prospect asks.
-- [ ] Add the contact email in [`components/Footer.tsx`](components/Footer.tsx).
-- [ ] Fill in the SIRET and address placeholders in
-      [`app/legal/page.tsx`](app/legal/page.tsx) and the footer once
-      registered.
-- [ ] Have terms/privacy reviewed — they're marked `[PLACEHOLDER]`.
+- [x] Proof — `PUBLIC_FINDINGS` in [`lib/findings.ts`](lib/findings.ts)
+      carries findings 007 and 006 from
+      [local-ai-security-lab](https://github.com/stizix/local-ai-security-lab),
+      each linking its public PoC. These are **research**, not client work,
+      and the page says so. Never relabel one as a client audit. If the list
+      is ever emptied, the proof section renders a loud "do not launch"
+      block by design.
+- [x] Operator bio and links.
+- [x] Contact email (`issa@shotoku.dev`).
+- [x] Terms and privacy drafted — **you still need to read them end to end
+      before launch.** They were written against what the code actually
+      collects and the guarantee it actually makes, but they are not legal
+      advice and have not been reviewed by a lawyer.
+- [ ] **Photo** — drop a square image at `public/operator.jpg` and wire it
+      into [`components/Operator.tsx`](components/Operator.tsx), replacing
+      the `[PHOTO]` slot. A real face is the strongest trust signal in that
+      section; an empty grey box is the weakest.
+- [ ] **SIRET** — registration is in progress. The legal notice and footer
+      currently say so honestly. Publish the number and registered address
+      in [`app/legal/page.tsx`](app/legal/page.tsx) and
+      [`components/Footer.tsx`](components/Footer.tsx) as soon as it is
+      issued; you should not be invoicing before then.
 - [ ] Work through [DEPLOY.md](DEPLOY.md) — database, Stripe (including
       the webhook), email, domain — and smoke-test the funnel in Stripe
       test mode.

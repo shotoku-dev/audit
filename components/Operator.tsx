@@ -4,9 +4,20 @@ import { Section, Heading, Lede } from "./Container";
 // a named person with a public, checkable body of work does not. Keep the
 // links live and keep the claims to things a visitor can verify in one click.
 const LINKS = [
-  { label: "github.com/shotoku-dev/shotoku", href: "https://github.com/shotoku-dev/shotoku" },
+  {
+    label: "local-ai-security-lab",
+    href: "https://github.com/stizix/local-ai-security-lab",
+  },
+  {
+    label: "github.com/shotoku-dev/shotoku",
+    href: "https://github.com/shotoku-dev/shotoku",
+  },
   { label: "shotoku.dev", href: "https://shotoku.dev" },
-  { label: "[REPLACE — X / LinkedIn]", href: "#" },
+  { label: "@prunier_issa", href: "https://x.com/prunier_issa" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/issa-prunier-a18404335/",
+  },
 ];
 
 export function Operator() {
@@ -49,11 +60,21 @@ export function Operator() {
               guardrail taught me where agents actually break, so I test other
               people&apos;s agents the same way an attacker would — by hand.
             </p>
-            <p className="text-[var(--faint)]">
-              [REPLACE — one or two concrete, checkable lines: prior security
-              work, disclosures you&apos;ve made, talks, or the number of
-              audits delivered so far. Do not write anything you can&apos;t
-              back up if asked.]
+            <p>
+              I publish my security research in the open at{" "}
+              <a
+                href="https://github.com/stizix/local-ai-security-lab"
+                className="text-[var(--fg)] underline decoration-[var(--faint)] underline-offset-4"
+              >
+                local-ai-security-lab
+              </a>
+              : seven findings against local AI stacks, plus an automation
+              harness — prompt injection in RAG pipelines, unauthenticated
+              ChromaDB and Ollama, system-prompt extraction compared across six
+              models, and a tool-using agent talked into issuing a refund it
+              should never have issued. Every one ships with a runnable proof
+              of concept. Nothing goes in that repo until it reproduces, and
+              the same rule governs what goes in your report.
             </p>
           </div>
 

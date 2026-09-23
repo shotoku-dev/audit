@@ -18,9 +18,12 @@ export function Footer() {
               Manual red-team audits for AI agents, run by one person in
               France. Testing is performed only within the scope you sign.
             </p>
-            <p className="mono mt-4 text-[11px] text-[var(--faint)]">
-              [REPLACE — contact email]
-            </p>
+            <a
+              href="mailto:issa@shotoku.dev"
+              className="mono mt-4 inline-block text-[11px] text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
+            >
+              issa@shotoku.dev
+            </a>
           </div>
 
           <div className="flex gap-12">
@@ -69,8 +72,8 @@ export function Footer() {
         </div>
 
         <div className="mono mt-10 border-t border-[var(--border)] pt-6 text-[11px] text-[var(--faint)]">
-          © {new Date().getFullYear()} Breakpoint · Micro-entreprise ·
-          SIRET [PLACEHOLDER]
+          © {new Date().getFullYear()} Breakpoint · Issa Prunier ·
+          Micro-entreprise registration in progress
         </div>
       </Container>
     </footer>
