@@ -4,7 +4,7 @@ Landing page + intake funnel for a fixed-scope AI-agent red-team audit.
 "We break your AI agent before someone else does."
 
 Separate product from Shotoku itself, meant to deploy on its own domain
-(e.g. `audit.shotoku.dev`). No dashboard, no API-key storage, no
+(e.g. `breakpoint.shotoku.dev`). No dashboard, no API-key storage, no
 automated testing — the audit is delivered manually, off-platform. This
 app only persuades, qualifies, verifies ownership, gets authorization
 signed, and collects payment.
@@ -49,11 +49,15 @@ named person. Both have visible holes right now.
       [`app/legal/page.tsx`](app/legal/page.tsx) and the footer once
       registered.
 - [ ] Have terms/privacy reviewed — they're marked `[PLACEHOLDER]`.
-- [ ] Set every var in [`.env.example`](.env.example) in the real
-      environment; run [`lib/schema.sql`](lib/schema.sql) against
-      `DATABASE_URL` once.
-- [ ] Point the Stripe webhook endpoint at
-      `https://<domain>/api/webhook/stripe` for `checkout.session.completed`.
+- [ ] Work through [DEPLOY.md](DEPLOY.md) — database, Stripe (including
+      the webhook), email, domain — and smoke-test the funnel in Stripe
+      test mode.
+
+## Deploying
+
+See [DEPLOY.md](DEPLOY.md). The app builds with **zero** environment
+variables, so the landing page can go live before the database, Stripe,
+or email exist. Wire those up in stages.
 
 ## Local dev
 
@@ -62,6 +66,7 @@ pnpm install
 pnpm dev
 ```
 
-Requires `DATABASE_URL` (any Postgres — Vercel Postgres or Supabase both
+The landing page and legal pages run with no configuration. The funnel
+needs `DATABASE_URL` (any Postgres — Vercel Postgres or Supabase both
 work), `STRIPE_SECRET_KEY` + `STRIPE_PRICE_ID` + `STRIPE_WEBHOOK_SECRET`,
-and `RESEND_API_KEY`. See `.env.example`.
+and `RESEND_API_KEY`. Copy `.env.example` to `.env.local`.

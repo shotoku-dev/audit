@@ -7,7 +7,7 @@ function client(): Resend {
   return new Resend(key);
 }
 
-const from = () => process.env.EMAIL_FROM ?? "Breakpoint <hello@audit.shotoku.dev>";
+const from = () => process.env.EMAIL_FROM ?? "Breakpoint <hello@breakpoint.shotoku.dev>";
 const baseUrl = () => process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
 async function send(to: string, subject: string, html: string): Promise<void> {
